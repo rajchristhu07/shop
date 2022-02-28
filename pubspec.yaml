@@ -36,6 +36,25 @@ dependencies:
   cupertino_icons: ^1.0.2
   http: ^0.13.3 #This is used for the API call
   provider: ^6.0.0
+  # Check that you have this dependency (added in the previous step)
+  firebase_core: ^1.13.1
+  # Add the dependency for the FlutterFire plugin for Google Analytics
+  firebase_analytics: ^9.1.2
+  # Add the dependencies for any other Firebase products you want to use in your app
+  # For example, to use Firebase Authentication and Cloud Firestore
+  firebase_auth: ^3.3.9
+  cloud_firestore: ^3.1.10
+  get_it: ^7.2.0
+
+  hexcolor: ^2.0.5
+  curved_navigation_bar: ^1.0.1
+  google_fonts: ^2.1.0
+  cached_network_image: ^3.1.0+1
+  carousel_slider: ^4.0.0
+  page_transition: ^2.0.4
+  geolocator: ^5.3.1
+  dio: ^4.0.1
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:

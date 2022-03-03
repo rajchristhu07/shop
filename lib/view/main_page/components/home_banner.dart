@@ -10,8 +10,7 @@ import '../../../utils/theme.dart';
 import '../../../view_model/product_vm/productvm.dart';
 
 class HomeBannerLanding extends StatefulWidget {
-  ProductVM productProvider;
-  HomeBannerLanding(this.productProvider);
+
 
   @override
   _HomeBannerLandingState createState() => new _HomeBannerLandingState();
@@ -32,10 +31,11 @@ class _HomeBannerLandingState extends State<HomeBannerLanding> {
 
   @override
   Widget build(BuildContext context) {
+    final productProvider = Provider.of<ProductVM>(context);
     final CarouselController _controller = CarouselController();
 
     return StreamBuilder(
-        stream: widget.productProvider.fetchProductsAsStream(),
+        stream: productProvider.fetchProductsAsStream(),
         builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.hasData) {
             products = snapshot.data!.docs.map((doc) => Product.fromMap(doc.data, doc.id))

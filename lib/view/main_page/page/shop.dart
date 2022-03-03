@@ -19,7 +19,6 @@ class _ShopMainPageState extends State<ShopMainPage> {
 
   @override
   Widget build(BuildContext context) {
-    final productProvider = Provider.of<ProductVM>(context);
     return Scaffold(
         backgroundColor: whiteColor,
         body: SingleChildScrollView(
@@ -28,7 +27,7 @@ class _ShopMainPageState extends State<ShopMainPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  HomeBannerLanding(productProvider),
+                  HomeBannerLanding(),
                   const CategoryList(),
                   const TopTrending(),
                   const ShoppingPage()

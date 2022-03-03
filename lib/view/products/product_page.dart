@@ -37,7 +37,7 @@ class _ProductPageWidgetState extends State<ProductPageWidget> {
   bool _snap = false;
   bool _floating = false;
   List<String> carousalList = [
-    "https://static.vecteezy.com/system/resources/previews/001/254/978/original/creative-and-colorful-restaurant-food-social-media-banner-post-vector.jpg",
+    "https://www.moodiedavittreport.com/wp-content/uploads/2021/06/MúAúC-Salt-Lake-City-International-Store-2-scaled.jpg",
     "https://thumbs.dreamstime.com/b/fast-food-creative-poster-design-set-web-graphics-modern-vector-illustration-npremium-quality-logo-concept-pictogram-76858679.jpg",
     "https://c.neh.tw/thumb/f/720/4913631651168256.jpg",
     "https://static.vecteezy.com/system/resources/previews/001/254/978/original/creative-and-colorful-restaurant-food-social-media-banner-post-vector.jpg",
@@ -169,7 +169,7 @@ class _ProductPageWidgetState extends State<ProductPageWidget> {
                                       children: [
 
                                         Text(
-                                          "Biriyani",
+                                          "Mac",
                                           style: TextStyle(
                                               color: blackColor,
                                               fontSize: 17,
@@ -178,7 +178,7 @@ class _ProductPageWidgetState extends State<ProductPageWidget> {
                                         const SizedBox(height: 3,),
 
                                         Text(
-                                          "Pizza",
+                                          "Mac Shop",
                                           maxLines: 2,
                                           overflow: TextOverflow.ellipsis,
                                           style: TextStyle(

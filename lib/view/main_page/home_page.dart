@@ -337,7 +337,7 @@ class _HomeMainPageState extends State<HomeMainPage> {
               color: whiteColor,
             ),
             Icon(Icons.shopping_cart_rounded, size: 22, color: whiteColor),
-            Icon(Icons.fastfood_rounded,
+            Icon(Icons.shopping_bag_rounded,
                 size: 22, color: whiteColor),
             Icon(Icons.local_shipping_rounded, size: 22, color: whiteColor),
             Icon(Icons.person_pin, size: 22, color: whiteColor),

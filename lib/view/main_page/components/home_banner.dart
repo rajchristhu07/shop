@@ -10,8 +10,7 @@ import '../../../utils/theme.dart';
 import '../../../view_model/product_vm/productvm.dart';
 
 class HomeBannerLanding extends StatefulWidget {
-  ProductVM productProvider;
-  HomeBannerLanding(this.productProvider);
+
 
   @override
   _HomeBannerLandingState createState() => new _HomeBannerLandingState();
@@ -27,26 +26,31 @@ class _HomeBannerLandingState extends State<HomeBannerLanding> {
     check = true;
   }
 
+  List<String> carousalList = ["https://www.moodiedavittreport.com/wp-content/uploads/2021/06/MúAúC-Salt-Lake-City-International-Store-2-scaled.jpg",
+    "https://thumbs.dreamstime.com/b/fast-food-creative-poster-design-set-web-graphics-modern-vector-illustration-npremium-quality-logo-concept-pictogram-76858679.jpg",
+    "https://c.neh.tw/thumb/f/720/4913631651168256.jpg"
 
+  ];
   int _current = 0;
 
   @override
   Widget build(BuildContext context) {
+    final productProvider = Provider.of<ProductVM>(context);
     final CarouselController _controller = CarouselController();
 
     return StreamBuilder(
-        stream: widget.productProvider.fetchProductsAsStream(),
+        stream: productProvider.fetchProductsAsStream(),
         builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.hasData) {
-            products = snapshot.data!.docs.map((doc) => Product.fromMap(doc.data, doc.id))
-                .toList();
+            // products = snapshot.data!.docs.map((doc) => Product.fromMap(doc.data, doc.id))
+            //     .toList();
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
                   padding: const EdgeInsets.only(right: 16, left: 16, top: 20),
                   child: CarouselSlider(
-                    items: products!
+                    items: carousalList
                         .map((item) => Container(
                       child: ClipRRect(
                           borderRadius:
@@ -57,7 +61,7 @@ class _HomeBannerLandingState extends State<HomeBannerLanding> {
                             child: CachedNetworkImage(
                               width: MediaQuery.of(context).size.width,
                               height: 160,
-                              imageUrl: item.img,
+                              imageUrl: item,
                               fit: BoxFit.cover,
                               placeholder: (context, url) => Container(
                                 width: MediaQuery.of(context).size.width,
@@ -95,7 +99,7 @@ class _HomeBannerLandingState extends State<HomeBannerLanding> {
                   padding: const EdgeInsets.only(right: 16, left: 16, top: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
-                    children: products!.asMap().entries.map((entry) {
+                    children: carousalList.asMap().entries.map((entry) {
                       return GestureDetector(
                         onTap: () => _controller.animateToPage(entry.key),
                         child: Container(

@@ -131,13 +131,13 @@ class HomeView extends StatelessWidget {
       builder: (controller) => Container(
         height: 350,
         child: ListView.separated(
-          itemCount: controller.productModel.length,
+          itemCount: controller.dealModel.length,
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
             return GestureDetector(
               onTap: () {
                 Get.to(DetailsView(
-                  model: controller.productModel[index],
+                  model: controller.dealModel[index],
                 ));
               },
               child: Container(
@@ -153,7 +153,7 @@ class HomeView extends StatelessWidget {
                           height: 220,
                           width: MediaQuery.of(context).size.width * .4,
                           child: Image.network(
-                            controller.productModel[index].image!,
+                            controller.dealModel[index].image!,
                             fit: BoxFit.fill,
                           )),
                     ),
@@ -161,7 +161,7 @@ class HomeView extends StatelessWidget {
                       height: 20,
                     ),
                     CustomText(
-                      text: controller.productModel[index].name!,
+                      text: controller.dealModel[index].name!,
                       alignment: Alignment.bottomLeft,
                     ),
                     SizedBox(
@@ -169,7 +169,7 @@ class HomeView extends StatelessWidget {
                     ),
                     Expanded(
                       child: CustomText(
-                        text: controller.productModel[index].description!,
+                        text: controller.dealModel[index].description!,
                         color: Colors.grey,
                         alignment: Alignment.bottomLeft,
                       ),
@@ -178,7 +178,7 @@ class HomeView extends StatelessWidget {
                       height: 20,
                     ),
                     CustomText(
-                      text: controller.productModel[index].price.toString() +
+                      text: controller.dealModel[index].price.toString() +
                           " \$",
                       color: primaryColor,
                       alignment: Alignment.bottomLeft,

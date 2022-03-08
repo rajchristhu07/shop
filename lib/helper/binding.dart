@@ -8,8 +8,8 @@ import '../core/view_model/home_view_model.dart';
 class Binding extends Bindings {
   @override
   void dependencies() {
+    Get.lazyPut(() => HomeViewModel());
     Get.lazyPut(() => AuthViewModel());
     Get.lazyPut(() => ControlViewModel());
-    Get.lazyPut(() => HomeViewModel());
   }
 }

@@ -63,7 +63,6 @@ class _HomeMainPageState extends State<HomeMainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset: false,
-
         key: _scaffoldKey,
         endDrawer: SizedBox(
           width: MediaQuery.of(context).size.width *
@@ -367,3 +366,4 @@ class _HomeMainPageState extends State<HomeMainPage> {
             : Container());
   }
 }
+

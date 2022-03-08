@@ -21,27 +21,27 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<HomeViewModel>(
-      init: Get.find(),
+      init: Get.find<HomeViewModel>(),
       builder: (controller) => controller.loading.value
-          ? Center(child: CircularProgressIndicator())
+          ? const Center(child: CircularProgressIndicator())
           : Scaffold(
               body: SingleChildScrollView(
                 child: Container(
-                  padding: EdgeInsets.only(top: 100, left: 20, right: 20),
+                  padding: const EdgeInsets.only(top: 100, left: 20, right: 20),
                   child: Column(
                     children: [
                       _searchTextFormField(),
-                      SizedBox(
+                      const SizedBox(
                         height: 30,
                       ),
                       CustomText(
                         text: "Categories",
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 30,
                       ),
                       _listViewCategory(),
-                      SizedBox(
+                      const SizedBox(
                         height: 30,
                       ),
                       Row(
@@ -57,7 +57,7 @@ class HomeView extends StatelessWidget {
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 30,
                       ),
                       _listViewProducts(),

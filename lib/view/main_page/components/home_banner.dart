@@ -42,8 +42,6 @@ class _HomeBannerLandingState extends State<HomeBannerLanding> {
         stream: productProvider.fetchProductsAsStream(),
         builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (snapshot.hasData) {
-            // products = snapshot.data!.docs.map((doc) => Product.fromMap(doc.data, doc.id))
-            //     .toList();
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

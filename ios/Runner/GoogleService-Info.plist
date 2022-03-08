@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>961742803074-snu5tcc7ncgf76me0ed54a99c6lrkef3.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.961742803074-snu5tcc7ncgf76me0ed54a99c6lrkef3</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCB5AkCm4gTbsaPYron7i02EJ1ceYoCvzU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>961742803074</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.christhu.shop</string>
+	<key>PROJECT_ID</key>
+	<string>shop-c9ab8</string>
+	<key>STORAGE_BUCKET</key>
+	<string>shop-c9ab8.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:961742803074:ios:6796f036fdf64652c1649b</string>
+</dict>
+</plist>

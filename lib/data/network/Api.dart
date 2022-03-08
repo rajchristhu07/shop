@@ -5,7 +5,7 @@ class Api {
   final FirebaseFirestore _db = FirebaseFirestore.instance;
 
   Future<QuerySnapshot> getDataCollection(String path) {
-    return _db.collection(path).get();
+    return _db.collection(path).get().then((value) => value);
   }
 
   Stream<QuerySnapshot> streamDataCollection(String path) {

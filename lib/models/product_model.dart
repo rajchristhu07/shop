@@ -1,12 +1,12 @@
 class Product {
-  String id;
-  String price;
-  String name;
-  String img;
+  dynamic id;
+  dynamic price;
+  dynamic name;
+  dynamic img;
 
-  Product({required this.id, required this.price, required this.name,required this.img});
+  Product({ this.id,  this.price,  this.name, this.img});
 
-  Product.fromMap(dynamic snapshot,String? id) :
+  Product.fromMap(Map snapshot,String id) :
         id = id ?? '',
         price = snapshot['price'] ?? '',
         name = snapshot['name'] ?? '',

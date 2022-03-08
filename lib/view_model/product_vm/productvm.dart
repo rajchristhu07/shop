@@ -12,21 +12,21 @@ class ProductVM extends ChangeNotifier {
 
   List<Product>? products;
 
-  Future<List<Product>> fetchProducts() async {
-    var result = await _api.getDataCollection("product");
-    products =
-        result.docs.map((doc) => Product.fromMap(doc.data(), doc.id)).toList();
-    return products!;
-  }
+  // Future<List<Product>> fetchProducts() async {
+  //   var result = await _api.getDataCollection("product");
+  //   products =
+  //       result.docs.map((doc) => Product.fromMap(doc.data(), doc.id)).toList();
+  //   return products!;
+  // }
 
   Stream<QuerySnapshot> fetchProductsAsStream() {
     return _api.streamDataCollection("product");
   }
 
-  Future<Product> getProductById(String id) async {
-    var doc = await _api.getDocumentById(id, "product");
-    return Product.fromMap(doc.data(), doc.id);
-  }
+  // Future<Product> getProductById(String id) async {
+  //   var doc = await _api.getDocumentById(id, "product");
+  //   return Product.fromMap(doc.data(), doc.id);
+  // }
 
   Future removeProduct(String id) async {
     await _api.removeDocument(id, "product");

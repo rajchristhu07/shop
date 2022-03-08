@@ -1,40 +1,18 @@
-import 'package:flutter/cupertino.dart';
-
-import '../helper/extenstion.dart';
-
 class TrendingModel {
-  String? name, image, description, sized, price;
-  Color? color;
+  String? name, image, id;
 
-  TrendingModel(
-      {this.name,
-        this.image,
-        this.description,
-        this.color,
-        this.sized,
-        this.price});
+  TrendingModel({this.name, this.image, this.id});
 
   TrendingModel.fromJson(Map<dynamic, dynamic> map) {
     if (map == null) {
       return;
     }
-
     name = map['name'];
     image = map['image'];
-    description = map['description'];
-    color = HexColor.fromHex(map['color']);
-    sized = map['sized'];
-    price = map['price'];
+    id = map['id'];
   }
 
   toJson() {
-    return {
-      'name': name,
-      'image': image,
-      'description': description,
-      'color': color,
-      'sized': sized,
-      'price': price,
-    };
+    return {'name': name, 'image': image, 'id': id};
   }
 }

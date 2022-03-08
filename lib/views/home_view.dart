@@ -113,7 +113,7 @@ class HomeView extends StatelessWidget {
                   height: 20,
                 ),
                 CustomText(
-                  text: controller.categoryModel[index].name!,
+                  text: controller.categoryModel[index].image!,
                 ),
               ],
             );
@@ -169,7 +169,7 @@ class HomeView extends StatelessWidget {
                     ),
                     Expanded(
                       child: CustomText(
-                        text: controller.dealModel[index].description!,
+                        text: controller.dealModel[index].name!,
                         color: Colors.grey,
                         alignment: Alignment.bottomLeft,
                       ),
@@ -178,7 +178,7 @@ class HomeView extends StatelessWidget {
                       height: 20,
                     ),
                     CustomText(
-                      text: controller.dealModel[index].price.toString() +
+                      text: controller.dealModel[index].name.toString() +
                           " \$",
                       color: primaryColor,
                       alignment: Alignment.bottomLeft,

@@ -69,9 +69,9 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         body: ControlView(),
       ),
-      theme: ThemeData(
-        fontFamily: 'SourceSans',
-      ),
+      // theme: ThemeData(
+      //   fontFamily: 'SourceSans',
+      // ),
     );
   }
 }

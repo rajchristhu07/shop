@@ -1,19 +1,19 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:shop/model/shop_model.dart';
 import 'package:shop/model/treanding_model.dart';
 
-import '../../model/category_model.dart';
+import '../../model/banner_model.dart';
 import '../../model/product_model.dart';
 import '../service/home_services.dart';
 
 class HomeViewModel extends GetxController {
   ValueNotifier<bool> get loading => _loading;
   final ValueNotifier<bool> _loading = ValueNotifier(false);
+  String? id;
 
-  List<CategoryModel> get categoryModel => _categoryModel;
-  final List<CategoryModel> _categoryModel = [];
+  List<BannerModel> get categoryModel => _categoryModel;
+  final List<BannerModel> _categoryModel = [];
 
   List<ProductModel> get dealModel => _dealModel;
   final List<ProductModel> _dealModel = [];
@@ -24,9 +24,13 @@ class HomeViewModel extends GetxController {
   List<ShopModel> get shopModel => _shopModel;
   final List<ShopModel> _shopModel = [];
 
+
+
+
   HomeViewModel() {
     getBanner();
     getDeal();
+    getShopping();
     getTrend();
   }
 
@@ -36,6 +40,7 @@ class HomeViewModel extends GetxController {
       if (value.isEmpty) {
         _loading.value = false;
       }
+      _categoryModel.clear();
       for (int i = 0; i < value.length; i++) {
         _categoryModel.add(value[i]);
         _loading.value = false;
@@ -50,6 +55,7 @@ class HomeViewModel extends GetxController {
       if (value.isEmpty) {
         _loading.value = false;
       }
+      _dealModel.clear();
       for (int i = 0; i < value.length; i++) {
         _dealModel.add(value[i]);
         _loading.value = false;
@@ -64,6 +70,7 @@ class HomeViewModel extends GetxController {
       if (value.isEmpty) {
         _loading.value = false;
       }
+      _trendModel.clear();
       for (int i = 0; i < value.length; i++) {
         _trendModel.add(value[i]);
         _loading.value = false;
@@ -74,10 +81,12 @@ class HomeViewModel extends GetxController {
 
   getShopping() async {
     _loading.value = true;
+    print("asfjnasjnfasfassaf");
     HomeService().getShop().then((value) {
       if (value.isEmpty) {
         _loading.value = false;
       }
+      shopModel.clear();
       for (int i = 0; i < value.length; i++) {
         shopModel.add(value[i]);
         _loading.value = false;
@@ -85,4 +94,5 @@ class HomeViewModel extends GetxController {
       update();
     });
   }
+
 }

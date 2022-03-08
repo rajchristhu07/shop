@@ -59,7 +59,7 @@ class DetailsView extends StatelessWidget {
                                   text: 'Size',
                                 ),
                                 CustomText(
-                                  text: model.sized!,
+                                  text: model.name!,
                                 ),
                               ],
                             ),
@@ -85,7 +85,7 @@ class DetailsView extends StatelessWidget {
                                   decoration: BoxDecoration(
                                     border: Border.all(color: Colors.grey),
                                     borderRadius: BorderRadius.circular(20),
-                                    color: model.color,
+                                    color: Colors.white,
                                   ),
                                 )
                               ],
@@ -104,7 +104,7 @@ class DetailsView extends StatelessWidget {
                         height: 20,
                       ),
                       CustomText(
-                        text: model.description!,
+                        text: model.name!,
                         fontSize: 18,
                         height: 2.5,
                       )
@@ -126,7 +126,7 @@ class DetailsView extends StatelessWidget {
                         color: Colors.grey,
                       ),
                       CustomText(
-                        text: ' \$' + model.price!,
+                        text: ' \$' + model.name!,
                         color: primaryColor,
                         fontSize: 18,
                       )

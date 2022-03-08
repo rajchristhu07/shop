@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 import 'package:page_transition/page_transition.dart';
+import 'package:shop/core/view_model/product_view_model.dart';
 
 import '../../../core/view_model/home_view_model.dart';
 import '../../../utils/theme.dart';
@@ -19,6 +20,7 @@ class CategoryList extends StatefulWidget {
 class _CategoryListState extends State<CategoryList> {
   @override
   Widget build(BuildContext context) {
+    Get.put(ProductViewmodel());
     return GetBuilder<HomeViewModel>(
         init: Get.find<HomeViewModel>(),
         builder: (controller) => controller.loading.value
@@ -82,11 +84,10 @@ class _CategoryListState extends State<CategoryList> {
                                             : const EdgeInsets.only(right: 16),
                                     child: InkWell(
                                       onTap: () {
-                                        Navigator.push(
-                                            context,
-                                            PageTransition(
-                                                type: PageTransitionType.fade,
-                                                child: ProductPage()));
+                                        Get.find<ProductViewmodel>().id =
+                                        controller.dealModel[index].id!;
+                                        Get.find<ProductViewmodel>().getProductView();
+                                        Get.to(() => ProductPage());
                                       },
                                       child: Column(
                                         children: [

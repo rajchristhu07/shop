@@ -1,4 +1,3 @@
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
@@ -6,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 import '../../model/user_model.dart';
-import '../../views/home_view.dart';
+import '../../view/main_page/page/shop.dart';
 import '../service/firestore_user.dart';
 
 class AuthViewModel extends GetxController {
@@ -51,7 +50,7 @@ class AuthViewModel extends GetxController {
 
     await _auth.signInWithCredential(credential).then((user) {
       saveUser(user);
-      Get.offAll(HomeView());
+      Get.offAll(ShopMainPage());
     });
   }
 
@@ -68,8 +67,9 @@ class AuthViewModel extends GetxController {
 
   void signInWithEmailAndPassword() async {
     try {
-      await _auth.signInWithEmailAndPassword(email: email!, password: password!);
-      Get.offAll(HomeView());
+      await _auth.signInWithEmailAndPassword(
+          email: email!, password: password!);
+      Get.offAll(ShopMainPage());
     } catch (e) {
       Get.snackbar(
         'Error login account',
@@ -88,7 +88,7 @@ class AuthViewModel extends GetxController {
         saveUser(user);
       });
 
-      Get.offAll(HomeView());
+      Get.offAll(ShopMainPage());
     } catch (e) {
       Get.snackbar(
         'Error login account',

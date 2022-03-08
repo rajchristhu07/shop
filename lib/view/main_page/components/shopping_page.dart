@@ -19,7 +19,9 @@ class _ShoppingPageState extends State<ShoppingPage> {
     return GetBuilder<HomeViewModel>(
         init: Get.find<HomeViewModel>(),
         builder: (controller) => controller.loading.value
-            ? const Center(child: CircularProgressIndicator())
+            ? Container(
+                color: Colors.white,
+              )
             : controller.shopModel.isNotEmpty
                 ? Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

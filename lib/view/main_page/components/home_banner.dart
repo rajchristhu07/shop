@@ -34,7 +34,9 @@ class _HomeBannerLandingState extends State<HomeBannerLanding> {
     return GetBuilder<HomeViewModel>(
         init: Get.find<HomeViewModel>(),
         builder: (controller) => controller.loading.value
-            ? const Center(child: CircularProgressIndicator())
+            ? Container(
+                color: Colors.white,
+              )
             : controller.categoryModel.isNotEmpty
                 ? Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

@@ -2,9 +2,9 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:shop/views/widgets/appBar.dart';
-import 'package:shop/views/widgets/bottom_nav.dart';
-import 'package:shop/views/widgets/end_drawer.dart';
+import 'package:shop/view/widgets/appBar.dart';
+import 'package:shop/view/widgets/bottom_nav.dart';
+import 'package:shop/view/widgets/end_drawer.dart';
 
 import '../core/view_model/auth_view_model.dart';
 import '../core/view_model/control_view_model.dart';
@@ -12,7 +12,7 @@ import '../core/view_model/home_view_model.dart';
 import '../utils/theme.dart';
 import '../view/main_page/widget/background.dart';
 import '../view/main_page/widget/separate.dart';
-import 'auth/login_view.dart';
+
 
 class ControlView extends GetWidget<AuthViewModel> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();

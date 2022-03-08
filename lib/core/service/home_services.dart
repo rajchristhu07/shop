@@ -40,8 +40,6 @@ class HomeService {
   }  
   
   Future<List<ShopModel>> getProductView(id) async {
-    print("dfkjsdjkfdsfdsfsdf");
-    print(id);
     QuerySnapshot<Map<String, dynamic>> snapshot =
     await _db.collection("ProductView")
         .where('id', isEqualTo: id.toString())

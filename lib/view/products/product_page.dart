@@ -46,7 +46,9 @@ class _ProductPageWidgetState extends State<ProductPageWidget> {
     return GetBuilder<ProductViewmodel>(
         init: Get.find<ProductViewmodel>(),
         builder: (controller) => controller.loading.value
-            ? const Center(child: CircularProgressIndicator())
+            ? Container(
+                color: Colors.white,
+              )
             : controller.shopViewModel.isNotEmpty
                 ? Scaffold(
                     body: CustomScrollView(

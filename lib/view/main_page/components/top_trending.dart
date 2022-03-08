@@ -21,7 +21,9 @@ class _TopTrendingState extends State<TopTrending> {
     return GetBuilder<HomeViewModel>(
         init: Get.find<HomeViewModel>(),
         builder: (controller) => controller.loading.value
-            ? const Center(child: CircularProgressIndicator())
+            ? Container(
+                color: Colors.white,
+              )
             : controller.trendModel.isNotEmpty
                 ? Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

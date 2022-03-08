@@ -24,7 +24,9 @@ class _CategoryListState extends State<CategoryList> {
     return GetBuilder<HomeViewModel>(
         init: Get.find<HomeViewModel>(),
         builder: (controller) => controller.loading.value
-            ? const Center(child: CircularProgressIndicator())
+            ? Container(
+                color: Colors.white,
+              )
             : controller.dealModel.isNotEmpty
                 ? Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

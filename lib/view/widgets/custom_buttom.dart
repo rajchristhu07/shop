@@ -1,34 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:shop/res/Resources.dart';
 
-import '../../constance.dart';
 import 'custom_text.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
+  final VoidCallback? onPressedFn;
 
-  final Color color;
-
-  final Function onPress;
-
-  CustomButton({
-    required this.onPress,
-    this.text = 'Write text ',
-    this.color = primaryColor,
-  });
+  CustomButton(this.text, this.onPressedFn);
 
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
-      shape: new RoundedRectangleBorder(
-        borderRadius: new BorderRadius.circular(10.0),
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        primary: Resources(context).color.colorPrimary,
+        elevation: 0,
       ),
-      padding: EdgeInsets.all(10),
-      onPressed: onPress(),
-      color: primaryColor,
+      onPressed: onPressedFn,
       child: CustomText(
-        alignment: Alignment.center,
         text: text,
+        fontSize: 14,
         color: Colors.white,
+        alignment: Alignment.center,
       ),
     );
   }

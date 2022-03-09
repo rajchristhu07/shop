@@ -1,9 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:shop/model/product_detail_model.dart';
 import 'package:shop/res/Resources.dart';
 
+import '../../core/view_model/cart_viewmodel.dart';
+import '../../model/cart_model.dart';
+import 'custom_buttom.dart';
 import 'custom_text.dart';
 
 Card ProductCard(BuildContext context, ProductDetailModel productDetailModel) {
@@ -57,7 +61,7 @@ Card ProductCard(BuildContext context, ProductDetailModel productDetailModel) {
                       height: 8,
                     ),
                     CustomText(
-                      text: "Price: "+productDetailModel.price!,
+                      text: "Price: " + productDetailModel.price!,
                       fontSize: 13,
                       fontWeight: FontWeight.bold,
                       color: Resources(context).color.colorBlack,
@@ -69,24 +73,42 @@ Card ProductCard(BuildContext context, ProductDetailModel productDetailModel) {
           ),
           Positioned(
             bottom: 0,
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: const BorderRadius.only(
-                  bottomLeft: Radius.circular(8),
-                  bottomRight: Radius.circular(8),
-                ),
-                color: Resources(context).color.colorPrimary,
-              ),
-              width: MediaQuery.of(context).size.width / 2 - 18,
-              height: 35,
-              child: Center(
-                child: Text(
-                  "Add",
-                  style: TextStyle(
-                      color: Resources(context).color.colorWhite,
-                      fontWeight: FontWeight.bold),
-                ),
-              ),
+            child: GetBuilder<CartViewModel>(
+              builder: (controllers) => Container(
+                  decoration: BoxDecoration(
+                    borderRadius: const BorderRadius.only(
+                      bottomLeft: Radius.circular(8),
+                      bottomRight: Radius.circular(8),
+                    ),
+                    color: controllers.cartProducts
+                            .where((element) =>
+                                element.productId == productDetailModel.id)
+                            .isEmpty
+                        ? Resources(context).color.colorPrimary
+                        : Resources(context).color.colorBlack,
+                  ),
+                  width: MediaQuery.of(context).size.width / 2 - 18,
+                  height: 35,
+                  child: controllers.cartProducts
+                          .where((element) =>
+                              element.productId == productDetailModel.id)
+                          .isEmpty
+                      ? CustomButton(
+                          'ADD',
+                          () {
+                            controllers.addProduct(
+                              CartModel(
+                                name: productDetailModel.name!,
+                                image: productDetailModel.image!,
+                                price: productDetailModel.price!,
+                                productId: productDetailModel.id!,
+                              ),
+                            );
+                          },
+                        )
+                      : CustomButton("REMOVE", () {
+                          controllers.removeProduct(productDetailModel.id!);
+                        })),
             ),
           )
         ],

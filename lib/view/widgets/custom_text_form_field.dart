@@ -1,46 +1,56 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:shop/res/Resources.dart';
 
-import 'custom_text.dart';
+import '../widgets/custom_text.dart';
 
 class CustomTextFormField extends StatelessWidget {
-  final String? text;
-
-  final String? hint;
-
-  final Function onSave;
-  final Function validator;
+  final String title;
+  final String hintText;
+  final String? Function(String?) validatorFn;
+  final Function(String?) onSavedFn;
+  final String initialValue;
+  final TextInputType? keyboardType;
+  final bool obscureText;
 
   CustomTextFormField({
-    this.text,
-    this.hint,
-    required this.onSave,
-    required this.validator,
+    required this.title,
+    required this.hintText,
+    required this.validatorFn,
+    required this.onSavedFn,
+    this.initialValue = '',
+    this.keyboardType,
+    this.obscureText = false,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          CustomText(
-            text: text!,
-            fontSize: 14,
-            color: Colors.grey.shade900,
-          ),
-          TextFormField(
-            onSaved: onSave(),
-            validator: validator(),
-            decoration: InputDecoration(
-              hintText: hint,
-              hintStyle: TextStyle(
-                color: Colors.black,
-              ),
-              fillColor: Colors.white,
+    return Column(
+      children: [
+        CustomText(
+          text: title,
+          fontSize: 14,
+          color: Colors.grey.shade900,
+        ),
+        TextFormField(
+          decoration: InputDecoration(
+            hintText: hintText,
+            hintStyle: TextStyle(
+              color: Colors.grey.shade400,
+              fontSize: 14,
             ),
-          )
-        ],
-      ),
+            focusedBorder: UnderlineInputBorder(
+              borderSide: BorderSide(
+                color: Resources(context).color.colorPrimary,
+              ),
+            ),
+          ),
+          keyboardType: keyboardType,
+          obscureText: obscureText,
+          initialValue: initialValue,
+          validator: validatorFn,
+          onSaved: onSavedFn,
+        ),
+      ],
     );
   }
 }

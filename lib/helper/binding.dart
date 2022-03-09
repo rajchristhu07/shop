@@ -1,5 +1,6 @@
 
 import 'package:get/get.dart';
+import 'package:shop/core/view_model/checkout_viewmodel.dart';
 import 'package:shop/core/view_model/product_view_model.dart';
 
 import '../core/view_model/auth_view_model.dart';
@@ -13,6 +14,7 @@ class Binding extends Bindings {
     Get.lazyPut(() => HomeViewModel());
     Get.lazyPut(() => ProductViewmodel());
     Get.put(CartViewModel());
+    Get.put(CheckoutViewModel());
     Get.lazyPut(() => AuthViewModel());
     Get.lazyPut(() => ControlViewModel());
   }

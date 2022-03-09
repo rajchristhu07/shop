@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../view/main_page/page/cart_page.dart';
+import '../../view/main_page/page/order_page.dart';
+import '../../view/main_page/page/profile_page.dart';
 import '../../view/main_page/page/shop.dart';
 
 
@@ -20,7 +23,7 @@ class ControlViewModel extends GetxController {
         }
       case 1:
         {
-          currentScreen = Container();
+          currentScreen = CartPage();
           break;
         }
       case 2:
@@ -30,12 +33,12 @@ class ControlViewModel extends GetxController {
         }
       case 3:
         {
-          currentScreen = Container();
+          currentScreen = OrderPage();
           break;
         }
       case 4:
         {
-          currentScreen = Container();
+          currentScreen = Profile();
           break;
         }
     }

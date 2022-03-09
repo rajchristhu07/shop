@@ -5,7 +5,7 @@ import 'package:provider/provider.dart';
 import '../../../core/view_model/cart_viewmodel.dart';
 import '../../../res/Resources.dart';
 import '../../../utils/theme.dart';
-import '../../../view_model/product_vm/productvm.dart';
+import '../../../core/view_model/productvm.dart';
 import '../../widgets/custom_text.dart';
 import '../components/cart_list.dart';
 import '../components/cart_summary.dart';

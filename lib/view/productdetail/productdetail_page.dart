@@ -5,7 +5,7 @@ import 'package:shop/core/view_model/product_detail_vm.dart';
 import 'package:shop/res/Resources.dart';
 
 import '../../../utils/theme.dart';
-import '../../../view_model/product_vm/productvm.dart';
+import '../../core/view_model/productvm.dart';
 import '../../core/view_model/cart_viewmodel.dart';
 import '../../core/view_model/control_view_model.dart';
 import '../control_view.dart';

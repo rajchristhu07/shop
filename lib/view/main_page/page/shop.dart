@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../utils/theme.dart';
-import '../../../view_model/product_vm/productvm.dart';
+import '../../../core/view_model/productvm.dart';
 import '../components/category_list.dart';
 import '../components/home_banner.dart';
 import '../components/shopping_page.dart';

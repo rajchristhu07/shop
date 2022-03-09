@@ -1,7 +1,7 @@
 import 'package:get_it/get_it.dart';
 
 import '../data/network/Api.dart';
-import '../view_model/product_vm/productvm.dart';
+import '../core/view_model/productvm.dart';
 
 
 GetIt locator = GetIt.instance;

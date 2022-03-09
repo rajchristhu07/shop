@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../../data/network/Api.dart';
-import '../../models/product_model.dart';
+import '../../model/product_models.dart';
 import '../../utils/locator.dart';
 
 class ProductVM extends ChangeNotifier {

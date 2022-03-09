@@ -8,9 +8,9 @@ import 'package:provider/provider.dart';
 import 'package:get/get.dart';
 
 import '../../../core/view_model/home_view_model.dart';
-import '../../../models/product_model.dart';
+import '../../../model/product_models.dart';
 import '../../../utils/theme.dart';
-import '../../../view_model/product_vm/productvm.dart';
+import '../../../core/view_model/productvm.dart';
 
 class HomeBannerLanding extends StatefulWidget {
   @override

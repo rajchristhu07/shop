@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 abstract class BaseColors{
   //theme color
-  MaterialColor get colorPrimary;
+  Color get colorPrimary;
   MaterialColor get colorAccent;
   //text color
   Color get colorPrimaryText;

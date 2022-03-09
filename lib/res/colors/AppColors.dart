@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 import 'BaseColors.dart';
 
@@ -23,7 +24,7 @@ class AppColors implements BaseColors{
   MaterialColor get colorAccent => Colors.amber;
 
   @override
-  MaterialColor get colorPrimary => MaterialColor(0xff1686ce,_primary);
+  Color get colorPrimary => HexColor("#F7692F");
 
   @override
   Color get colorPrimaryText => Color(0xff49ABFF);
@@ -35,7 +36,7 @@ class AppColors implements BaseColors{
   Color get colorWhite => Color(0xffffffff);
 
   @override
-  Color get colorBlack => Color(0xff000000);
+  Color get colorBlack => HexColor("#686B78");
 
   @override
   Color get castChipColor => Colors.deepOrangeAccent;

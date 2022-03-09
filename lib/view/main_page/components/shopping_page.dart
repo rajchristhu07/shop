@@ -4,7 +4,9 @@ import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 import '../../../core/view_model/home_view_model.dart';
+import '../../../core/view_model/product_detail_vm.dart';
 import '../../../utils/theme.dart';
+import '../../productdetail/productdetail_page.dart';
 
 class ShoppingPage extends StatefulWidget {
   const ShoppingPage({Key? key}) : super(key: key);
@@ -80,7 +82,16 @@ class _ShoppingPageState extends State<ShoppingPage> {
                                         : const EdgeInsets.only(
                                             top: 16, left: 16, right: 16),
                                 child: InkWell(
-                                  onTap: () {},
+                                  onTap: () {
+                                    Get.put(ProductDetailViewModel());
+                                    Get.find<ProductDetailViewModel>().id =
+                                        controller.shopModel[index].id!;
+                                    Get.to(
+                                      const ProductDetailPage(),
+                                    );
+                                    Get.find<ProductDetailViewModel>()
+                                        .getProductDetail();
+                                  },
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment:
@@ -181,7 +192,7 @@ class _ShoppingPageState extends State<ShoppingPage> {
                                                         Icons.star_rate_rounded,
                                                         size: 17,
                                                         color: textColor),
-                                                    SizedBox(
+                                                    const SizedBox(
                                                       width: 6,
                                                     ),
                                                     Text(
@@ -195,7 +206,7 @@ class _ShoppingPageState extends State<ShoppingPage> {
                                                           fontWeight:
                                                               FontWeight.w600),
                                                     ),
-                                                    SizedBox(
+                                                    const SizedBox(
                                                       width: 6,
                                                     ),
                                                     Text(
@@ -209,7 +220,7 @@ class _ShoppingPageState extends State<ShoppingPage> {
                                                           fontWeight:
                                                               FontWeight.w600),
                                                     ),
-                                                    SizedBox(
+                                                    const SizedBox(
                                                       width: 6,
                                                     ),
                                                     Text(
@@ -231,8 +242,9 @@ class _ShoppingPageState extends State<ShoppingPage> {
                                                 Container(
                                                   height: 1.6,
                                                   color: grayColorOne,
-                                                  padding: EdgeInsets.only(
-                                                      right: 6, left: 6),
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          right: 6, left: 6),
                                                 ),
                                                 const SizedBox(
                                                   height: 6,
@@ -245,7 +257,7 @@ class _ShoppingPageState extends State<ShoppingPage> {
                                                         size: 17,
                                                         color:
                                                             primaryColorDarkOne),
-                                                    SizedBox(
+                                                    const SizedBox(
                                                       width: 6,
                                                     ),
                                                     Text(

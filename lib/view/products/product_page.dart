@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:shop/core/view_model/home_view_model.dart';
+import 'package:shop/core/view_model/product_detail_vm.dart';
+import 'package:shop/view/productdetail/productdetail_page.dart';
 
 import '../../core/view_model/product_view_model.dart';
 import '../../utils/theme.dart';
@@ -148,7 +150,18 @@ class _ProductPageWidgetState extends State<ProductPageWidget> {
                                                       left: 16,
                                                       right: 16),
                                       child: InkWell(
-                                        onTap: () {},
+                                        onTap: () {
+                                          Get.put(ProductDetailViewModel());
+                                          Get.find<ProductDetailViewModel>()
+                                                  .id =
+                                              controller
+                                                  .shopViewModel[index].productId!;
+                                          Get.to(
+                                            const ProductDetailPage(),
+                                          );
+                                          Get.find<ProductDetailViewModel>().getProductDetail();
+
+                                        },
                                         child: Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.start,
@@ -269,7 +282,7 @@ class _ProductPageWidgetState extends State<ProductPageWidget> {
                                                                   .star_rate_rounded,
                                                               size: 17,
                                                               color: textColor),
-                                                          SizedBox(
+                                                          const SizedBox(
                                                             width: 6,
                                                           ),
                                                           Text(
@@ -286,7 +299,7 @@ class _ProductPageWidgetState extends State<ProductPageWidget> {
                                                                     FontWeight
                                                                         .w600),
                                                           ),
-                                                          SizedBox(
+                                                          const SizedBox(
                                                             width: 6,
                                                           ),
                                                           Text(
@@ -303,7 +316,7 @@ class _ProductPageWidgetState extends State<ProductPageWidget> {
                                                                     FontWeight
                                                                         .w600),
                                                           ),
-                                                          SizedBox(
+                                                          const SizedBox(
                                                             width: 6,
                                                           ),
                                                           Text(
@@ -329,7 +342,8 @@ class _ProductPageWidgetState extends State<ProductPageWidget> {
                                                         height: 1.6,
                                                         color: grayColorOne,
                                                         padding:
-                                                            EdgeInsets.only(
+                                                            const EdgeInsets
+                                                                    .only(
                                                                 right: 6,
                                                                 left: 6),
                                                       ),
@@ -344,7 +358,7 @@ class _ProductPageWidgetState extends State<ProductPageWidget> {
                                                               size: 17,
                                                               color:
                                                                   primaryColorDarkOne),
-                                                          SizedBox(
+                                                          const SizedBox(
                                                             width: 6,
                                                           ),
                                                           Text(

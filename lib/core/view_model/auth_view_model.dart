@@ -1,15 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:get/get.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 
 import '../../model/user_model.dart';
 import '../../view/main_page/page/shop.dart';
 import '../service/firestore_user.dart';
 
 class AuthViewModel extends GetxController {
-  GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email']);
   FirebaseAuth _auth = FirebaseAuth.instance;
 
   String? email, password, name;
@@ -37,33 +34,6 @@ class AuthViewModel extends GetxController {
     super.onClose();
   }
 
-  void googleSignInMethod() async {
-    final GoogleSignInAccount googleUser = await _googleSignIn.signIn();
-    print(googleUser);
-    GoogleSignInAuthentication googleSignInAuthentication =
-        await googleUser.authentication;
-
-    final AuthCredential credential = GoogleAuthProvider.credential(
-      idToken: googleSignInAuthentication.idToken,
-      accessToken: googleSignInAuthentication.accessToken,
-    );
-
-    await _auth.signInWithCredential(credential).then((user) {
-      saveUser(user);
-      Get.offAll(ShopMainPage());
-    });
-  }
-
-  void facebookSignInMethod() async {
-    final AccessToken result = await FacebookAuth.instance.login();
-
-    final OAuthCredential facebookAuthCredential =
-        FacebookAuthProvider.credential(result.token);
-
-    await _auth.signInWithCredential(facebookAuthCredential).then((user) {
-      saveUser(user);
-    });
-  }
 
   void signInWithEmailAndPassword() async {
     try {

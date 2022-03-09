@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:shop/model/product_detail_model.dart';
 
 import '../../model/banner_model.dart';
 import '../../model/product_model.dart';
@@ -44,9 +45,17 @@ class HomeService {
     await _db.collection("ProductView")
         .where('id', isEqualTo: id.toString())
         .get();
-
     return snapshot.docs
         .map((docSnapshot) => ShopModel.fromJson(docSnapshot.data()))
+        .toList();
+  }
+  Future<List<ProductDetailModel>> getProductDetail(id) async {
+    QuerySnapshot<Map<String, dynamic>> snapshot =
+    await _db.collection("ProductDetail")
+        .where('id', isEqualTo: id.toString())
+        .get();
+    return snapshot.docs
+        .map((docSnapshot) => ProductDetailModel.fromJson(docSnapshot.data()))
         .toList();
   }
 }

@@ -67,9 +67,11 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                                       child: Material(
                                           child: InkWell(
                                         onTap: () {
-                                          Get.offAll(ControlView());
+                                          Get.put(ControlViewModel());
                                           Get.find<ControlViewModel>()
-                                              .changeSelectedValue(3);
+                                              .changeSelectedValue(1);
+                                          Get.offAll(ControlView());
+
                                         },
                                         child: Card(
                                             color: Resources(context)

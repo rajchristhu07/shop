@@ -10,7 +10,9 @@ import 'custom_buttom.dart';
 import 'custom_text.dart';
 
 Container AddressWidget(BuildContext context) {
-  final _formKey = GlobalKey<FormState>();
+  // final _formKey = GlobalKey<FormState>();
+  //  final GlobalKey<FormFieldState<String>> _formKey = GlobalKey<FormFieldState<String>>();
+   var _formKey = GlobalKey<FormState>();
 
   return Container(
       decoration: BoxDecoration(
@@ -20,7 +22,6 @@ Container AddressWidget(BuildContext context) {
           ),
           color: Resources(context).color.colorWhite),
       padding: EdgeInsets.all(16),
-      height: 400,
       child: Form(
           key: _formKey,
           child: GetBuilder<CheckoutViewModel>(

@@ -45,6 +45,7 @@ class CustomTextFormField extends StatelessWidget {
             ),
           ),
           keyboardType: keyboardType,
+          textInputAction: TextInputAction.next,
           obscureText: obscureText,
           initialValue: initialValue,
           validator: validatorFn,

@@ -22,9 +22,7 @@ class ProductViewmodel extends GetxController {
 
   getProductView() async {
     _loading.value = true;
-
     HomeService().getProductView(id).then((value) {
-
       if (value.isEmpty) {
         _loading.value = false;
       }

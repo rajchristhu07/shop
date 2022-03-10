@@ -145,19 +145,22 @@ class _CartSummaryState extends State<CartSummary> {
                           child: CustomButton(
                             'Proceed ',
                             () {
+                              Get.dialog(
+                                AlertDialog(
+                                  content: SingleChildScrollView(
+                                    child: AddressWidget(context)
+                                  ),
+                                ),
+                                barrierDismissible: false,
+                              );
 
-                              showModalBottomSheet<void>(
-                                  context: context,
-                                  backgroundColor: Colors.transparent,
-                                  builder: (BuildContext context) {
-                                    return  SingleChildScrollView(
-                                        child: AnimatedPadding(
-                                        padding: MediaQuery.of(context).viewInsets,
-                                    duration: const Duration(milliseconds: 100),
-                                    curve: Curves.decelerate,
-                                    child:AddressWidget(context)))
-                                      ;
-                                  });
+                              // showModalBottomSheet<void>(
+                              //     isScrollControlled: true,
+                              //     context: context,
+                              //     backgroundColor: Colors.transparent,
+                              //     builder: (BuildContext context) {
+                              //       return AddressWidget(context);
+                              //     });
                             },
                           ))
                     ]),
